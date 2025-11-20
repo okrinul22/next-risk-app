@@ -54,7 +54,6 @@ const useRiskCalculator = () => {
                     setSubmissionStatus(`Error: ${error.message}`);
                 }
                 setRiskLevel(null);
-                setRiskLevel(null)
             }
         } else {
             setSubmissionStatus('Please select all fields before submitting.');
