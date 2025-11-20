@@ -1,0 +1,19 @@
+services:
+  app:
+    container_name: apps_fe
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    env_file:
+      - ./.env
+    restart: unless-stopped
+    user: "1001:1001"
+    networks:
+      - fullstack
+
+networks:
+  fullstack:
+    external: true
+    name: fullstack
