@@ -1,8 +1,52 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Risk Calculator
+
+A professional web application for calculating and assessing risk levels using probability, exposure, and consequence factors. Built with [Next.js](https://nextjs.org/) and React.
+
+## What It Does
+
+The Risk Calculator helps users evaluate risk by combining three key factors:
+
+- **Probability** - Likelihood of an event occurring
+- **Exposure** - Frequency or duration of exposure to the risk
+- **Consequence** - Potential impact or severity if the event occurs
+
+Users select values for each factor, and the application calculates a comprehensive risk score with corresponding risk level (Low, Medium, High, Critical).
+
+## Features
+
+- Interactive risk assessment interface
+- Real-time risk calculation
+- Visual risk level indicators
+- RESTful API integration for risk factors
+- Responsive design for all devices
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js (v14 or higher)
+- npm, yarn, pnpm, or bun
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone <repository-url>
+   cd fe-risk-calculator
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   # or
+   yarn install
+   # or
+   pnpm install
+   ```
+
+### Running the Application
+
+Start the development server:
 
 ```bash
 npm run dev
@@ -14,15 +58,24 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) with your browser to use the Risk Calculator.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+### API Requirements
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+The application expects backend API endpoints at:
+- `/api/probability` - Get probability options
+- `/api/exposure` - Get exposure options
+- `/api/consequence` - Get consequence options
+- `/api/risk-calculator` - Calculate risk score (POST)
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- `pages/index.js` - Main application page
+- `hooks/useRiskCalculator.js` - Custom hook for risk calculation logic
+- `lib/axios.js` - HTTP client configuration
+- `components/` - React components (including RiskCalculator)
+
+The `pages/api` directory is mapped to `/api/*` for API routes.
 
 ## Learn More
 
